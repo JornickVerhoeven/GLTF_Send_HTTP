@@ -43,7 +43,7 @@ class GLTF_Send_HTTP:
 
         # Prepare the file for sending (MIME type for GLB files is "model/gltf-binary")
         files = {
-            request_field_name: (filename, file_content, "model/gltf-binary")
+            request_field_name: (filename, file_content, "application/octet-stream")
         }
         try:
             response = requests.request(method=method_type.upper(), url=url, headers=additional_request_headers, files=files)
